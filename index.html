@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Verbot</title>
+</head>
+<body>
+    <header>
+        <h1>verbot.ai</h1>
+        <div class="settings-btn-wrap">
+          <button class="fa-solid fa-gear settings-btn"></button>
+        </div>
+    </header>
+    
+    <main>
+      <div class="speak-btn-wrap">
+        <button onclick="run()" class="fa-solid fa-microphone-lines"></button>
+        <p class="info">Click the microphone and speak</p>
+      </div>
+    </main>
+
+    <div class="modal-bg">
+      <div class="modal">d</div>
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+
+      <script type="module" src="./assets/script/index.js"></script>
+</body>
+</html>

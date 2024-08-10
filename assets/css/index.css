@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    transition: .5s;
+}
+
+*:focus{
+    outline: 0;
+}
+
+:root{
+    --theme: #121212;
+    --solid: #1FCC2F;
+}
+
+html{
+    background-color: var(--theme);
+    color: #FFF;
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+}
+
+button{
+    font-weight: 700;
+    background-color: #FFF;
+    border: 0;
+    cursor: pointer;
+}
+
+body{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+header{
+    padding: .75rem;
+    box-shadow: 1px 1px 1px #7777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+main{
+    position: relative;
+    height: 100dvh;
+    margin-top: -1rem;
+}
+
+.speak-btn-wrap{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.speak-btn-wrap button{
+    padding: 2rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    font-size: 5rem;
+    /* color: #FFF; */
+}
+
+.info{
+    padding: 2rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.modal-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7777;
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.modal{
+    padding: 1rem;
+    border-radius: .75rem;
+    background-color: #101010;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: .5rem;
+}
+
+.settings-btn-wrap{
+    display: flex;
+    justify-content: end;
+}
+
+.settings-btn{
+    padding: .75rem;
+    font-size: 1.5rem;
+    border-radius: 40%;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.settings-btn:focus, .settings-btn:hover{
+    background-color: #FFF;
+    color: #101010;
+}
