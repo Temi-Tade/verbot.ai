@@ -90,7 +90,7 @@ main{
 }
 
 .modal{
-    padding: 1rem;
+    padding: .5rem;
     border-radius: .75rem;
     background-color: #101010;
     position: absolute;
@@ -98,6 +98,8 @@ main{
     left: 0;
     right: 0;
     margin: .5rem;
+    max-height: 12rem;
+    overflow-y: auto;
 }
 
 .settings-btn-wrap{
@@ -115,5 +117,28 @@ main{
 
 .settings-btn:focus, .settings-btn:hover{
     background-color: #FFF;
+    color: #101010;
+}
+
+.settings-list{
+    padding: .5rem;
+}
+
+.settings-list li{
+    padding: .25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select{
+    background-color: transparent;
+    border: 0;
+    padding: .25rem 0;
+    color: #FFF;
+    cursor: pointer;
+}
+
+option{
     color: #101010;
 }
