@@ -123,6 +123,5 @@ document.querySelector(".speak-btn-wrap button").onclick = (ev) => {
 document.querySelector(".settings-btn").onclick = () => {
     SHOW_MODAL(`
         <h3>Settings</h3>
-
     `)
 }
