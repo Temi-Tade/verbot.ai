@@ -6,6 +6,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 const voices = [];
 const voiceoptions = [];
 let voice;
+let mediaStream = null;
 
 speechSynthesis.onvoiceschanged = () => {
     [...speechSynthesis.getVoices()].filter(voice => voice.name.toLowerCase().includes("english")).map(voice  => {
@@ -58,7 +59,9 @@ const SHOW_MODAL = (text) => {
 
 const CHECK_MIC_PERMISSION = () => {
     navigator.mediaDevices.getUserMedia({audio: true})
-    .then(res => console.log(res))
+    .then(res => {
+        mediaStream = res;
+    })
     return navigator.permissions.query({name: "microphone"});
 }
 
@@ -88,11 +91,13 @@ document.querySelector(".speak-btn-wrap button").onclick = (ev) => {
 
                     recognition.onnomatch = () => {
                         SHOW_MODAL("Please try again. I did not catch that.")
+                        document.querySelector(".info").innerHTML = "Click on the microphone and speak";
                     };
                 
                     recognition.onend = () => {
                         console.log('Speech recognition ended');
                         ev.target.setAttribute("class", "fa-solid fa-microphone-lines");
+                        mediaStream.getTracks().forEach(track => track.stop());
                     };
                 
                     recognition.onresult = async (event) => {
@@ -147,5 +152,5 @@ document.querySelector(".settings-btn").onclick = () => {
 
     document.querySelector("select").onchange = (ev) => {
         voice = voices[voiceoptions.indexOf(`<option>${ev.target.value}</option>`)];
-    }
+    };
 }
